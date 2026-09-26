@@ -202,7 +202,7 @@ def wgssr():
             wrong = wrong + 1
             print(f"{wrong} out of 5 chances used!")
     else:
-        print("Game over! The capital was: ", word)
+        print("Game over! The word was:", word)
 
 print("Welcome to MiniPy!")
 main()
