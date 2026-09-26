@@ -164,6 +164,12 @@ def capitle():
             print(f"{wrong} out of 5 chances used!")
     else:
         print("Game over! The capital was: ", word)
+    print(" ")
+    p = input("To select another game, enter 1. To play this game again, enter anything else. ")
+    if p != "1":
+        rps()
+    else:
+        main()
 
 def wgssr():
     word = input("Player 1, please enter a word.")
@@ -203,6 +209,12 @@ def wgssr():
             print(f"{wrong} out of 5 chances used!")
     else:
         print("Game over! The word was:", word)
+    print(" ")
+    p = input("To select another game, enter 1. To play this game again, enter anything else. ")
+    if p != "1":
+        rps()
+    else:
+        main()
 
 print("Welcome to MiniPy!")
 main()
