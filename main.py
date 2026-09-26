@@ -1,12 +1,12 @@
 import random 
 
 def main():
-    print("Welcome to MiniPy!")
+    print(" ")
+    print("Menu:")
     print("a - Higher/Lower (Computer)")
     print("b - Higher/Lower (2 Players)")
-    print("c - Rock Paper Scissors")
-    
-    game = input("Please enter one of the letters above to select! ")
+    print("c - Rock Paper Scissors ")
+    game = input("Please enter one of the letters above to select! In case of confusion, please write 0 for help. ")
     game = game.lower()
     if game == "a": 
         hl()
@@ -14,9 +14,20 @@ def main():
         hl2p()
     if game == "c":
         rps()
+    if game == "0":
+        helpfunc()
 
+def helpfunc():
+    print(" ")
+    print("MiniPy features a collection of terminal-based minigames that you can play vs the computer, or in-person vs a friend.")
+    print("Each game will have rules and general prompts to help you with any input you need to enter.")
+    print("Thank you for trying out my project!!! -rgbhsl")
+    x = input("To return to menu, please enter m. ")
+    if x == "m":
+        main()
 
 def hl():
+    print(" ")
     print("HIGHER/LOWER : The number will be a positive integer 1 to 50. You get 6 guesses.")
     compnum = random.randint(1, 50)
     guesses = 6
@@ -42,6 +53,7 @@ def hl():
         main()
 
 def hl2p():
+    print(" ")
     print("HIGHER/LOWER : Player 1 may enter an integer 1-100, and Player 2 will get 8 guesses.")
     p1num = int(input("Player 1, please enter an integer 1 to 100. "))
     while (p1num>100) or (p1num<1):
@@ -52,9 +64,9 @@ def hl2p():
         spacer = spacer + 1
     guesses = 8
     while guesses != 0:
-        x = int(input("Enter your guess. "))
+        x = int(input("Player 2, enter your guess. "))
         if x<1 or x>100 :
-            print("Your guess is out of range. ")
+            print("Player 2, your guess is out of range. ")
         else:
             guesses = guesses - 1
             if x> p1num:
@@ -73,7 +85,8 @@ def hl2p():
         main()
 
 def rps():
-    print("Welcome to Rock-Paper-Scissors.")
+    print(" ")
+    print("Welcome to Rock-Paper-Scissors. Please note r = rock, p = paper, s = scissors. ")
     compnum = random.randint(1,3)
     if compnum == 1:
         mv = "r"
@@ -94,5 +107,5 @@ def rps():
     else:
         main()
 
-
+print("Welcome to MiniPy!")
 main()
