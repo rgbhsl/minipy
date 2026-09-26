@@ -129,8 +129,9 @@ def rolld():
         main()
 
 def capitle():
-    capitals = ["paris", "berlin", "london", "moscow", "tashkent", "abuja", "algiers", "astana", "athens", "baku", "bangkok", "beijing", "brasilia", "dhaka", "djibouti", "havana", "ljubljana", "rabat", "seoul", "tokyo", "yerevan"]
+    capitals = ["Paris", "Berlin", "London", "Moscow", "Tashkent", "Abuja", "Algiers", "Astana", "Athens", "Baku", "Bangkok", "Beijing", "Brasilia", "Dhaka", "Djibouti", "Havana", "Ljubljana", "Rabat", "Seoul", "Tokyo", "Yerevan"]
     word = random.choice(capitals)
+    word = word.lower()
     guessed = []
     wrong = 0
     maxg = 5
