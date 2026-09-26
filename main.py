@@ -46,6 +46,7 @@ def hl():
                 break
     if guesses == 0 :
         print("The number was", compnum)
+    print(" ")
     p = input("To select another game, enter 1. To play this game again, enter anything else. ")
     if p != "1":
         hl()
@@ -78,6 +79,7 @@ def hl2p():
                 break
     if guesses == 0 :
         print("Player 1 win! The number chosen by Player 1 was", p1num)
+    print(" ")
     p = input("To select another game, enter 1. To play this game again, enter anything else. ")
     if p != "1":
         hl2p()
@@ -94,13 +96,14 @@ def rps():
         mv = "p"
     else:
         mv = "s"
-    play = (input("The computer has chosen! Please enter r, p, or s to play rock, paper, or scissors respectively: ")).lower()
+    play = (input("The computer has chosen! Please enter r, p, or s: ")).lower()
     if mv == play:
         print("Tie! The computer also played", play)
     elif ((mv == "r") and (play == "p")) or ((mv == "p") and (play == "s")) or ((mv == "s") and (play == "r")):
         print("Player win! The computer played", mv)
     elif ((play == "r") and (mv == "p")) or ((play == "p") and (mv == "s")) or ((play == "s") and (mv == "r")):
         print("Computer win! The computer played", mv)
+    print(" ")
     p = input("To select another game, enter 1. To play this game again, enter anything else. ")
     if p != "1":
         rps()
