@@ -5,7 +5,8 @@ def main():
     print("Menu:")
     print("a - Higher/Lower (Computer)")
     print("b - Higher/Lower (2 Players)")
-    print("c - Rock Paper Scissors ")
+    print("c - Rock Paper Scissors")
+    print("d - Roll a die")
     game = input("Please enter one of the letters above to select! In case of confusion, please write 0 for help. ")
     game = game.lower()
     if game == "a": 
@@ -14,6 +15,8 @@ def main():
         hl2p()
     if game == "c":
         rps()
+    if game == "d":
+        rolld()
     if game == "0":
         helpfunc()
 
@@ -107,6 +110,18 @@ def rps():
     p = input("To select another game, enter 1. To play this game again, enter anything else. ")
     if p != "1":
         rps()
+    else:
+        main()
+
+def rolld():
+    print(" ")
+    print("DIE ROLL: Pick an upper bound, and a random integer from 1 to your number will be generated!")
+    up = int(input("Your upper bound: "))
+    x = random.randint(1, up)
+    print(f"On the die: {x}")
+    p = input("Write 1 to go back to menu. Write anything else to change your die or roll again: ")
+    if p != "1":
+        rolld()
     else:
         main()
 
