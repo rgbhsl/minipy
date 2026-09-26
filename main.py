@@ -7,6 +7,7 @@ def main():
     print("b - Higher/Lower (2 Players)")
     print("c - Rock Paper Scissors")
     print("d - Roll a die")
+    print("e - Capitle")
     game = input("Please enter one of the letters above to select! In case of confusion, please write 0 for help. ")
     game = game.lower()
     if game == "a": 
@@ -17,6 +18,8 @@ def main():
         rps()
     if game == "d":
         rolld()
+    if game == "e":
+        capitle()
     if game == "0":
         helpfunc()
 
@@ -124,6 +127,39 @@ def rolld():
         rolld()
     else:
         main()
+
+def capitle():
+    capitals = ["paris", "berlin", "london", "moscow", "tashkent", "abuja", "algiers", "astana", "athens", "baku", "bangkok", "beijing", "brasilia", "dhaka", "djibouti", "havana", "ljubljana", "rabat", "seoul", "tokyo", "yerevan"]
+    word = random.choice(capitals)
+    guessed = []
+    wrong = 0
+    maxg = 5
+    print("")
+    print("A game inspired by Hangman, with the theme being capitals of countries! You get 5 chances to get a letter wrong.")
+    while wrong < maxg:
+        display = ("")
+        for letter in word:
+            if letter in guessed:
+                display += letter + " "
+            else:
+                display += "_ "
+        print("Word:", display)
+        if "_" not in display:
+            print("You won! The word was: ", word)
+            break
+        guess = input("Guess a letter: ").lower()
+        if len(guess) != 1 or not guess.isalpha():
+            print("Please enter just one letter.")
+            continue
+        if guess in guessed:
+            print("You guessed this before.")
+            continue
+        guessed.append(guess)
+        if guess not in word:
+            wrong = wrong + 1
+            print(f"{wrong} out of 5 chances used!")
+    else:
+        print("Game over! The capital was: ", word)
 
 print("Welcome to MiniPy!")
 main()
