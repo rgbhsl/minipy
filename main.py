@@ -26,12 +26,13 @@ def hl():
             print("Your guess is out of range. ")
         else:
             guesses = guesses - 1
-            if x == compnum:
-                print("Well done! You win with", guesses, "guess(es) remaining")
-            elif x> compnum:
+            if x> compnum:
                 print("Too high!", guesses, "guesses left.")
             elif x< compnum:
                 print("Too low!", guesses, "guesses left.")
+            elif x == compnum:
+                print("Well done! You win with", guesses, "guess(es) remaining")
+                break
     if guesses == 0 :
         print("The number was", compnum)
     p = input("To select another game, enter 1. To play this game again, enter anything else. ")
@@ -56,12 +57,13 @@ def hl2p():
             print("Your guess is out of range. ")
         else:
             guesses = guesses - 1
-            if x == p1num:
-                print("Well done! Player 2 wins with", guesses, "guess(es) remaining")
-            elif x> p1num:
+            if x> p1num:
                 print("Too high!", guesses, "guesses left.")
             elif x< p1num:
                 print("Too low!", guesses, "guesses left.")
+            elif x == p1num:
+                print("Well done! Player 2 wins with", guesses, "guess(es) remaining")
+                break
     if guesses == 0 :
         print("Player 1 win! The number chosen by Player 1 was", p1num)
     p = input("To select another game, enter 1. To play this game again, enter anything else. ")
@@ -69,7 +71,6 @@ def hl2p():
         hl2p()
     else:
         main()
-
 
 def rps():
     print("Welcome to Rock-Paper-Scissors.")
