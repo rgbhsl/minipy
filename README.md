@@ -1,14 +1,15 @@
 # minipy
 A collection of 1-player and 2-player terminal minigames written in Python.
 
-screenshot
+![alt text](Screenshot.png)
 
 ## Try it out: https://pyterm.hackclub.com/rgbhsl/minipy
 
 ### Features: 
-- x 1-player games with a computer opponent
-- x 2-player games for in-person multiplayer
-- In-game help feature
+- 3 games with a computer opponent
+- 2 in-person multiplayer games
+- Die roll/random number generator
+- Help feature
 
 All the games are entirely terminal based. Gameplay is based on simple, guided input to make it easier for the player(s).
 
