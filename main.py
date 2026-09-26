@@ -3,11 +3,12 @@ import random
 def main():
     print(" ")
     print("Menu:")
-    print("a - Higher/Lower (Computer)")
+    print("a - Higher/Lower (vs Computer)")
     print("b - Higher/Lower (2 Players)")
     print("c - Rock Paper Scissors")
     print("d - Roll a die")
-    print("e - Capitle")
+    print("e - Capitle (vs Computer)")
+    print("f - Word Guesser (2 Players)")
     game = input("Please enter one of the letters above to select! In case of confusion, please write 0 for help. ")
     game = game.lower()
     if game == "a": 
@@ -20,6 +21,8 @@ def main():
         rolld()
     if game == "e":
         capitle()
+    if game == "f":
+        wgssr()
     if game == "0":
         helpfunc()
 
@@ -137,6 +140,45 @@ def capitle():
     maxg = 5
     print("")
     print("A game inspired by Hangman, with the theme being capitals of countries! You get 5 chances to get a letter wrong.")
+    while wrong < maxg:
+        display = ("")
+        for letter in word:
+            if letter in guessed:
+                display += letter + " "
+            else:
+                display += "_ "
+        print("Word:", display)
+        if "_" not in display:
+            print("You won! The word was: ", word)
+            break
+        guess = input("Guess a letter: ").lower()
+        if len(guess) != 1 or not guess.isalpha():
+            print("Please enter just one letter.")
+            continue
+        if guess in guessed:
+            print("You guessed this before.")
+            continue
+        guessed.append(guess)
+        if guess not in word:
+            wrong = wrong + 1
+            print(f"{wrong} out of 5 chances used!")
+    else:
+        print("Game over! The capital was: ", word)
+
+def wgssr():
+    word = input("Player 1, please enter a word.")
+    if not word.isalpha():
+        word = input("Invalid entry. Please enter a word.")
+    spacer = 0
+    while spacer != 45:
+        print("...")
+        spacer = spacer + 1
+    word = word.lower()
+    guessed = []
+    wrong = 0
+    maxg = 5
+    print("")
+    print("Player 2, you get 5 chances to get a letter wrong.")
     while wrong < maxg:
         display = ("")
         for letter in word:
