@@ -1,7 +1,7 @@
 # minipy
-A collection of 1-player and 2-player terminal minigames written in Python.
+A collection of terminal minigames written in Python.
 
-![alt text](Screenshot.png)
+![A screenshot displaying the start menu of MiniPy](image.png)
 
 ## Try it out: https://pyterm.hackclub.com/rgbhsl/minipy
 
