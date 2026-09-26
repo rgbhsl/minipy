@@ -4,12 +4,14 @@ def main():
     print("Welcome to MiniPy!")
     print("a - Higher/Lower")
     print("b - Rock Paper Scissors")
-    x = input("Please enter one of the letters above to select! ")
-    x = x.lower()
-    if x == "a": 
+    print("c - Codele")
+    game = input("Please enter one of the letters above to select! ")
+    game = game.lower()
+    if game == "a": 
         hl()
-    if x == "b":
+    if game == "b":
         rps()
+
 
 def hl():
     print("HIGHER/LOWER : The number will be a positive integer 1 to 50. You get 6 guesses.")
@@ -29,7 +31,11 @@ def hl():
                 print("Too low!", guesses, "guesses left.")
     if guesses == 0 :
         print("The number was", compnum)
-
+    p = input("To select another game, enter 1. To play this game again, enter anything else. ")
+    if p != "1":
+        hl()
+    else:
+        main()
 
 def rps():
     print("Welcome to Rock-Paper-Scissors.")
@@ -39,7 +45,7 @@ def rps():
     elif compnum == 2:
         mv = "p"
     else:
-        mv = "scissors"
+        mv = "s"
     play = (input("The computer has chosen! Please enter r, p, or s to play rock, paper, or scissors respectively: ")).lower()
     if mv == play:
         print("Tie! The computer also played", play)
@@ -47,7 +53,11 @@ def rps():
         print("Player win! The computer played", mv)
     elif ((play == "r") and (mv == "p")) or ((play == "p") and (mv == "s")) or ((play == "s") and (mv == "r")):
         print("Computer win! The computer played", mv)
-
+    p = input("To select another game, enter 1. To play this game again, enter anything else. ")
+    if p != "1":
+        rps()
+    else:
+        main()
 
 
 main()
